@@ -1,0 +1,7 @@
+interface:
+  display_name: "自适应学习教练"
+  short_description: "通过真实项目进行自适应分层教学、排错训练与可验证的能力证据记录"
+  default_prompt: "使用 $adaptive-learning-coach 根据当前目标与已有证据，选择下一步最小可验证学习任务。"
+
+policy:
+  allow_implicit_invocation: true
