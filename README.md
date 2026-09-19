@@ -1,8 +1,8 @@
 # Adaptive Learning Coach · 自适应学习教练
 
-A project-based learning skill for Codex: adapt guidance to evidence, respect learner control, and load detailed instructions only when needed.
+A project-based learning plugin and standalone skill for Codex: adapt guidance to evidence, respect learner control, and load detailed instructions only when needed.
 
-跨领域、项目驱动、按需加载的教学 Skill。通过真实任务，让学习者逐步获得解释、修改、验证和迁移能力。
+跨领域、项目驱动、按需加载的教学插件，内含一个可独立安装的 Skill。通过真实任务，让学习者逐步获得解释、修改、验证和迁移能力。
 
 ## 能做什么
 
@@ -15,6 +15,19 @@ A project-based learning skill for Codex: adapt guidance to evidence, respect le
 用户说“直接讲”或“直接做”时，直接提供帮助。普通事实问答和没有学习意图的代办不进入教学流程。
 
 ## 安装
+
+### 作为插件安装
+
+仓库根目录包含 `.codex-plugin/plugin.json`，插件版本为 `2.2.0`，仅包含教学 Skill，无需配置 MCP 服务或连接外部账号。在 Codex 中发送：
+
+```text
+请使用 $plugin-creator 将 https://github.com/ZhiHe-ma/adaptive-learning-coach
+作为本地插件加入我的个人插件市场并安装，保留仓库已有插件清单和 skills 目录。
+```
+
+安装完成后，在新任务中选用“自适应学习教练”插件。个人插件市场中的安装不等于上架官方公共插件目录。插件结构与分发方式参见 [OpenAI 插件文档](https://developers.openai.com/plugins/build/plugins)。
+
+### 仅安装独立 Skill
 
 在 Codex 中使用内置 Skill Installer，发送：
 
@@ -49,17 +62,22 @@ $adaptive-learning-coach 暂停并记录在当前对话，不创建文件。
 ## 文件结构
 
 ```text
-skills/adaptive-learning-coach/
-├── SKILL.md
-├── agents/openai.yaml
-└── references/
-    ├── teaching-loop.md
-    ├── debugging-loop.md
-    ├── state-and-evidence.md
-    └── engineering-learning.md
+adaptive-learning-coach/
+├── .codex-plugin/plugin.json
+├── README.md
+├── LICENSE
+├── THIRD_PARTY_NOTICES.md
+└── skills/adaptive-learning-coach/
+    ├── SKILL.md
+    ├── agents/openai.yaml
+    └── references/
+        ├── teaching-loop.md
+        ├── debugging-loop.md
+        ├── state-and-evidence.md
+        └── engineering-learning.md
 ```
 
-入口负责定位与路由，四个参考文件按触发条件读取。Skill 包只有这六个文件，没有运行脚本或必须连接的外部服务。仓库外层的说明和许可证用于开源分发，不需要加载到教学上下文。
+插件清单负责插件身份和展示信息；Skill 入口负责教学定位与路由，四个参考文件按触发条件读取。Skill 本体仍只有六个文件，没有运行脚本或必须连接的外部服务。外层的说明和许可证用于开源分发，不需要加载到教学上下文。
 
 ## 验证范围
 

@@ -1,0 +1,28 @@
+{
+  "name": "adaptive-learning-coach",
+  "version": "2.2.0",
+  "description": "跨领域、项目驱动的自适应学习教练，通过可观察证据调节教学、测评、排错和接续。",
+  "author": {
+    "name": "ZhiHe-ma",
+    "url": "https://github.com/ZhiHe-ma"
+  },
+  "homepage": "https://github.com/ZhiHe-ma/adaptive-learning-coach",
+  "repository": "https://github.com/ZhiHe-ma/adaptive-learning-coach",
+  "license": "MIT",
+  "keywords": ["learning", "tutoring", "education", "codex", "skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "自适应学习教练",
+    "shortDescription": "用真实项目学习，按证据调整提示并接续进度。",
+    "longDescription": "提供引导教学、无提示测评、证据排错、降阶重讲与直接支持。区分任务完成和能力掌握，按需加载参考，并复用现有学习状态。",
+    "developerName": "ZhiHe-ma",
+    "category": "Productivity",
+    "capabilities": ["Interactive"],
+    "websiteURL": "https://github.com/ZhiHe-ma/adaptive-learning-coach",
+    "defaultPrompt": [
+      "根据我的目标与已有证据，带我完成下一步最小可验证学习任务。",
+      "继续当前学习项目，先读取已有进度，只给必要提示。",
+      "考查我对当前知识的理解，等我作答后再反馈。"
+    ]
+  }
+}
